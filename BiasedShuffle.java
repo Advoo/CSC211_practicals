@@ -1,23 +1,29 @@
-import java.util.*;
+import java.util.Random;
 
 public class BiasedShuffle {
 
-    public static void main(String[] args) {
-        int N = 10;
-        int[] arr = new int[N];
+    public static int[] biasedShuffle(int N) {
+        int[] shuffled = new int[N];
+        for (int i = 0; i < N; i++) {
+            shuffled[i] = i + 1;
+        }
+
         Random rand = new Random();
 
         for (int i = 0; i < N; i++) {
-            arr[i] = i + 1;
+            int r = rand.nextInt(N); // WRONG range → biased
+            int temp = shuffled[i];
+            shuffled[i] = shuffled[r];
+            shuffled[r] = temp;
         }
+        return shuffled;
+    }
 
-        for (int i = 0; i < N; i++) {
-            int j = rand.nextInt(N); // WRONG range
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+    public static void main(String[] args) {
+        int[] result = biasedShuffle(10);
+        for (int x : result) {
+            System.out.print(x + " ");
         }
-
-        System.out.println(Arrays.toString(arr));
     }
 }
+
