@@ -1,7 +1,7 @@
 import java.util.HashMap;
 import java.util.Map;
 
-public class CountPermutations {
+public class CountPermutation {
 
     public static int[] unbiasedShuffle(int N) {
         int[] B = new int[N];
