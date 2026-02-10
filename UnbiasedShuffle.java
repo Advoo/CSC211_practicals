@@ -1,23 +1,31 @@
-import java.util.*;
+import java.util.Random;
 
 public class UnbiasedShuffle {
 
-    public static void main(String[] args) {
-        int N = 10;
-        int[] arr = new int[N];
+    public static int[] unbiasedShuffle(int N) {
+        int[] B = new int[N];
+        for (int i = 0; i < N; i++) {
+            B[i] = i + 1;
+        }
+
         Random rand = new Random();
+        int b = 0;
 
-        for (int i = 0; i < N; i++) {
-            arr[i] = i + 1;
+        while (b < N) {
+            int r = b + rand.nextInt(N - b); // correct range
+            int temp = B[b];
+            B[b] = B[r];
+            B[r] = temp;
+            b++;
         }
+        return B;
+    }
 
-        for (int i = 0; i < N; i++) {
-            int j = i + rand.nextInt(N - i);
-            int temp = arr[i];
-            arr[i] = arr[j];
-            arr[j] = temp;
+    public static void main(String[] args) {
+        int[] result = unbiasedShuffle(10);
+        for (int x : result) {
+            System.out.print(x + " ");
         }
-
-        System.out.println(Arrays.toString(arr));
     }
 }
+
