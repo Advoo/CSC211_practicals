@@ -6,13 +6,13 @@ import java.lang.Math;
 public class timeMethods {
 
     public static int N = 0;
-    public static int[] keys;   // array from file
+    public static int[] keys;   // this will contain the keys for each string
 
     public static void main(String args[]) throws Exception {
 
-        // ---------- READ FILE ----------
+
         ArrayList<Integer> temp = new ArrayList<>();
-        Scanner file = new Scanner(new File("ulysses.numbered"));
+        Scanner file = new Scanner(new File("ulysses.numbered")); // from the ikamva
 
         while (file.hasNext()) {
             temp.add(file.nextInt());
