@@ -58,9 +58,7 @@ public class methodTime {
         double linearStd =
                 Math.sqrt((runTime2 - repetitions * linearAvg * linearAvg) / (repetitions - 1));
 
-        // ===============================
-        // SORT ARRAY FOR BINARY SEARCH
-        // ===============================
+
 
         Arrays.sort(keys);
 
