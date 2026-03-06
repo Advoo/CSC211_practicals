@@ -25,5 +25,25 @@ public class Main{
         }
 
         //last number
+
+        for (int j = 1; j <= N ; j++) {
+            if (isNotPresent[j]) {
+                shuffled[N - 1] = j;
+
+            }
+
+        }
+        return shuffled;
+    }
+
+    // Biased Shuffle
+    public static int[] biasedShuffle(int N) {
+        int[] shuffled new int[N];
+        for (int i = 0; i < N; i++) {
+            int ri = rand.nextInt(N);
+            int temp = shuffled[i];
+            shuffled[i] = shuffles[ri];
+            shuffled[ri] = temp;
+        }
     }
 }
