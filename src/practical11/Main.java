@@ -16,6 +16,8 @@ public class Main{
         System.out.println("Biased shuffle:");
         int[] biased = biasedShuffle(N);
         System.out.println(Arrays.toString(biased));
+
+        Test.testShuffle();
     }
 
     // Slow shuffle using improved method
@@ -33,6 +35,7 @@ public class Main{
                 i++;
             }
         }
+
 
         //last number
 
@@ -59,4 +62,25 @@ public class Main{
         }
         return shuffled;
     }
+    public static int[] shuffle(int N){
+
+        int[] B = new int[N];
+
+        for (int i = 0; i < N; i++){
+            B[i] = i+1;
+        }
+
+        for (int b=0; b<N; b++){
+
+            int r = b + (int)(Math.random()*(N-b));
+
+            int temp = B[b];
+            B[b] = B[r];
+            B[r] = temp;
+
+        }
+
+        return B;
+    }
 }
+
