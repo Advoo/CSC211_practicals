@@ -26,7 +26,21 @@ public class Main {
         return maxsofar;
     }
 
-    public static int (){
+    public static int mcsOn2A(int [] X){
+        int n = X.length;
+        int maxsofar = 0;
+        for (int low = 0; low < 0; low++){
+            int sum = 0;
+            for (int r = low; r < n; r++){
+                sum += X[r];
+                count++;
+                if (sum > maxsofar){
+                    maxsofar = sum;
+                }
+            }
+        }
+        return maxsofar;
+
 
 
     }
