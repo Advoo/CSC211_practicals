@@ -1,4 +1,5 @@
 package practical12;
+import java.util.Random;
 
 public class Main {
     public static void main(String[] agrs){
@@ -69,17 +70,37 @@ public class Main {
         return maxsofar;
     }
 
-    public static int mcsOn(int[] X){
+    public static int mcsOn(int[] X) {
         int n = X.length;
-        int maxsofar =0;
+        int maxsofar = 0;
         int maxToHere = 0;
 
-        for (int i = 0; i < n;i++){
+        for (int i = 0; i < n; i++) {
             maxToHere = Math.max(maxToHere + X[i], 0);
             maxsofar = Math.max(maxsofar, maxToHere);
             count++;
         }
         return maxsofar;
+    }
+
+    //Generating a random array of lenth n with about one third negative nums
+
+    public static int[] generateArray(int n , Random rand){
+        int[] X = new int[n];
+        for (int i = 0; i < n; i++) {
+            // exponent in 2,3,4 with equal probability
+            int exponent = rand.nextInt(3) + 2; //2, 3, or 4
+            int sign = (exponent % 2 == 0) ? 1 : -1;
+
+            int value = rand.nextInt(n) + 1;
+            X[i] = value * sign;
+
+        }
+        return X;
+
+        }
+
+    }
 
 
-}
+
