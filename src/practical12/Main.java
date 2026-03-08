@@ -69,4 +69,17 @@ public class Main {
         return maxsofar;
     }
 
+    public static int mcsOn(int[] X){
+        int n = X.length;
+        int maxsofar =0;
+        int maxToHere = 0;
+
+        for (int i = 0; i < n;i++){
+            maxToHere = Math.max(maxToHere + X[i], 0);
+            maxsofar = Math.max(maxsofar, maxToHere);
+            count++;
+        }
+        return maxsofar;
+
+
 }
