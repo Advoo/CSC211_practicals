@@ -16,8 +16,11 @@ public class Main{
         System.out.println("Biased shuffle:");
         int[] biased = biasedShuffle(N);
         System.out.println(Arrays.toString(biased));
+        System.out.println();
 
+        System.out.println("COUNTS OF 60000 RUNS :");
         Test.testShuffle();
+
     }
 
     // Slow shuffle using improved method
