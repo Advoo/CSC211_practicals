@@ -9,7 +9,7 @@ public class HeapSort {
         for (int i = array.length - 1; i > 0; i--){
             String temp= array[0];
             array[0] = array[i];
-            array[i] + temp;
+            array[i] = temp;
         }
     }
 }
