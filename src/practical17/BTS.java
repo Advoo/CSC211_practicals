@@ -73,6 +73,15 @@ public class BTS {
 
     }
     public tNode removeEvens(tNode root){
+        if (root == null) return null;
+
+        //process left and right first
+        root.left = removeEvens(root.left);
+        root.right = removeEvens(root.right);
+        if (root.key % 2 == 0){
+            return delete(root, root.key);
+        }
+        return root;
 
 
     }
