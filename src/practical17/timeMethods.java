@@ -1,6 +1,6 @@
 package practical17;
 
-public class time {
+public class timeMethods {
 
     public static double[] measure(int n, int repetitions){
 
