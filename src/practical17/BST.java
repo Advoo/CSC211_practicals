@@ -1,6 +1,6 @@
 package practical17;
 
-public class BTS {
+public class BST {
 
     public tNode insert(tNode root, int key){
         if (root == null) return new tNode(key); //if null position, insert new node

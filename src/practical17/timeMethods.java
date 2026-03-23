@@ -9,7 +9,7 @@ public class timeMethods {
 
         for (int i = 0; i < repetitions; i++){
 
-            BTS tree = new BTS();
+            BST tree = new BST();
 
             long start = System.nanoTime();
 
