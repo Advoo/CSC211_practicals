@@ -27,11 +27,21 @@ public class BTS {
 
         return node;
     }
-    public boolean inBST(tNode node, int min, int max){
+    public boolean isBST(tNode node, int min, int max){
 
+        if(node == null ) return true; //empty tree is vvalid
+
+        if (node.key < min || node.key > max)
+            return false;
+
+        //check left & right recursively
+
+        return isBST(node.left, min , node.key -1)
+                && isBST(node.right, node.key + 1, max);
 
     }
     public tNode delete(tNode root , int key){
+        
 
     }
     private tNode findMin(tNode node){
