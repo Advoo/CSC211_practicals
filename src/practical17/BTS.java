@@ -23,7 +23,7 @@ public class BTS {
 
         node.left = buildBalanced(start, mid -1);
 
-        node.right = buildBalanced((mid + 1, end);
+        node.right = buildBalanced((mid + 1), end);
 
         return node;
     }
@@ -41,13 +41,39 @@ public class BTS {
 
     }
     public tNode delete(tNode root , int key){
-        
+        if (root == null) return null; // if tree is empty
+
+        if (key < root.key)
+            root.left = delete(root.left, key); //search left
+
+        else if (key > root.key)
+            root.right = delete(root.right, key);
+        // found node to delete
+        else {
+            //case1 & 2 with 1 or no child
+            if (root.left == null) return root.right;
+            if (root.right == null) return root.left;
+
+            //2 children
+            tNode minNode = findMin(root.right);
+
+            //delete duplicates from subtree
+            root.right = delete(root.right, minNode.key);
+
+
+        }
+        return root;
+
 
     }
     private tNode findMin(tNode node){
+        while (node.left != null)
+            node = node.left;
+        return node;
 
     }
     public tNode removeEvens(tNode root){
+
 
     }
 
